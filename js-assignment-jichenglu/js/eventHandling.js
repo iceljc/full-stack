@@ -1,30 +1,81 @@
 ﻿function addition() {
     let a = document.querySelector("#txtFirstNumber").value;
     let b = document.querySelector("#txtSecondNumber").value;
-    let c = parseFloat(a) + parseFloat(b);
-    document.querySelector("#txtResult").value = c;
+
+    try {
+        let num_a = parseFloat(a);
+        let num_b = parseFloat(b);
+        if (isNaN(num_a) || isNaN(num_b)) {
+            throw new Error("Please input a number.");
+        }
+        let c = num_a + num_b;
+        document.querySelector("#txtResult").value = c;
+    } catch (e) {
+        alert(e.message);
+        document.querySelector("#txtResult").value = "";
+    }
+
+    
 }
 
 function subtraction() {
     let a = document.querySelector("#txtFirstNumber").value;
     let b = document.querySelector("#txtSecondNumber").value;
-    let c = parseFloat(a) - parseFloat(b);
-    document.querySelector("#txtResult").value = c;
+    
+    try {
+        let num_a = parseFloat(a);
+        let num_b = parseFloat(b);
+        if (isNaN(num_a) || isNaN(num_b)) {
+            throw new Error("Please input a number.");
+        }
+        let c = num_a - num_b;
+        document.querySelector("#txtResult").value = c;
+    } catch (e) {
+        alert(e.message);
+        document.querySelector("#txtResult").value = "";
+    }
 }
 
 function multiplication() {
     let a = document.querySelector("#txtFirstNumber").value;
     let b = document.querySelector("#txtSecondNumber").value;
-    let c = parseFloat(a) * parseFloat(b);
-    document.querySelector("#txtResult").value = c;
+
+    try {
+        let num_a = parseFloat(a);
+        let num_b = parseFloat(b);
+        if (isNaN(num_a) || isNaN(num_b)) {
+            throw new Error("Please input a number.");
+        }
+        let c = num_a * num_b;
+        document.querySelector("#txtResult").value = c;
+    } catch (e) {
+        alert(e.message);
+        document.querySelector("#txtResult").value = "";
+    }
 }
 
 
 function division() {
     let a = document.querySelector("#txtFirstNumber").value;
     let b = document.querySelector("#txtSecondNumber").value;
-    let c = parseFloat(a) / parseFloat(b);
-    document.querySelector("#txtResult").value = c;
+    
+    try {
+        let num_a = parseFloat(a);
+        let num_b = parseFloat(b);
+        if (isNaN(num_a) || isNaN(num_b)) {
+            throw new Error("Please input a number.");
+        }
+
+        if (num_b == 0) {
+            throw new Error("Zero division.");
+        }
+
+        let c = num_a / num_b;
+        document.querySelector("#txtResult").value = c;
+    } catch (e) {
+        alert(e.message);
+        document.querySelector("#txtResult").value = "";
+    }
 }
 
 
